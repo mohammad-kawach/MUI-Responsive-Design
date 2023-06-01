@@ -6,9 +6,6 @@ const Feed = () => {
       bgcolor={"pink"} 
       flex={4} 
       p={2}
-      sx={{
-        display: { xs: 'none', sm: 'block'  }
-      }}
     > 
       Feed
     </Box>
