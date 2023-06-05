@@ -1,16 +1,17 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const Rightbar = () => {
   return (
-    <Box 
-      bgcolor={"gray"} 
+    <Box
       flex={1} 
       p={2}
       sx={{
         display: { xs: 'none', sm: 'block'  }
       }}
     >
-      Rightbar
+      <Box sx={{ position: 'fixed' }}>
+        <Typography varient='h6' fontWeight={100}>Online Friends</Typography>
+      </Box>
     </Box>
   )
 }
