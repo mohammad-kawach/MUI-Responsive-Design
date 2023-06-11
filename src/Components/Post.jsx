@@ -2,14 +2,15 @@ import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, Checkbox
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ShareIcon from '@mui/icons-material/Share';
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import PropTypes from 'prop-types';
 
-const Post = () => {
+const Post = (props) => {
   return (
     <Card sx={{ margin: 5 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-            R
+          <Avatar sx={{ bgcolor: props.avtarBGColor }} aria-label="recipe">
+            {props.avatarLetter}
           </Avatar>
         }
         action={
@@ -17,20 +18,18 @@ const Post = () => {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={props.title}
+        subheader={props.subheader}
       />
       <CardMedia
         component="img"
-        height="20%"
-        image="https://picsum.photos/id/28/1500/1500"
+        height="10%"
+        image={props.image}
         alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem incidunt consectetur, vitae voluptates aut illum laboriosam? Quisquam accusamus nam officia!
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -43,6 +42,14 @@ const Post = () => {
       </CardActions>
     </Card>
   )
+}
+
+Post.propTypes = {
+  subheader: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  avtarBGColor: PropTypes.string.isRequired,
+  avatarLetter: PropTypes.string.isRequired,
 }
 
 export default Post;
